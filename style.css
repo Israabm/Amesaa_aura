@@ -1,0 +1,630 @@
+/* General setup */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffe6eb;
+  color: #4a2c2a;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ffb6c1b8;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+   height: 70px;
+   box-sizing: border-box;
+}
+/* --- NEW ADDITION/UPDATE: Reset the H1 container in the Header --- */
+/* Target the logo container which holds the button */
+.logo { 
+    /* Remove default h1 margins that push content */
+    margin: 0; 
+    padding: 0;
+    /* Helps align the button correctly within the header's flex container */
+    display: flex; 
+    align-items: center; /* Ensures the content inside H1 (the button) is vertically centered */
+    height: 100%; /* Take up the full height of the header for better centering */
+}
+
+.logo-img {
+  height: 50px;
+ width: auto;  /* maintain aspect ratio */
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #b83256;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #f74b74;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(100%);
+}
+/* ========================================================= */
+/* --- HERO SECTION STYLES (INDEX PAGE) --- */
+/* ========================================================= */
+
+.hero-section {
+    /* ... (rest of the positioning styles) ... */
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* BACKGROUND IMAGE: The key part that applies the image */
+    background-image: url('images/hero.jpg'); 
+    background-size: cover;
+    background-position: center;
+    
+    /* ... (rest of the positioning styles) ... */
+    margin-top: -60px; 
+    position: relative;
+    z-index: 1; 
+}
+
+/* ... (rest of .hero-content, h2, p, and .cta-button styles) ... */
+
+/* About Section */
+.about {
+  padding: 120px 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+
+.about-video {
+  width: 45%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  display: block;
+}
+
+.about-text {
+  width: 45%;
+}
+
+.about-text h2 {
+  color: #b83256;
+  margin-bottom: 15px;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 900px) {
+  .about-content {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .about-img,
+  .about-text {
+    width: 100%;
+  }
+}
+/* --- Our Creations Section --- */
+.our-creations {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: #fce4ec; /* Maintain consistent background */
+}
+
+.our-creations h2 {
+    font-size: 2.8em;
+    color: #880e4f;
+    margin-bottom: 50px;
+    font-family: 'Playfair Display', serif; /* or similar elegant font */
+}
+
+.creations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Individual Creation Card --- */
+.creation-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 18px; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-decoration: none; 
+    color: inherit; 
+    overflow: hidden; 
+}
+
+.creation-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(184, 50, 86, 0.4);
+}
+
+.creation-card img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    border-top-left-radius: 18px; 
+    border-top-right-radius: 18px;
+    transition: filter 0.3s ease;
+}
+
+.creation-card:hover img {
+    filter: brightness(0.9);
+}
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-content h3 {
+    font-size: 1.4em;
+    color: #e91e63;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.view-details-btn {
+    background-color: #ff80ab;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
+}
+
+.view-details-btn:hover {
+    background-color: #e91e63;
+    transform: translateY(-2px);
+}
+/* Style for the link that acts as the "Order" button */
+.order-btn {
+    /* Set display to inline-block so it accepts padding and dimensions */
+    display: inline-block; 
+    
+    background-color: #e91e63; /* Pink button */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none; /* Crucial: removes the hyperlink underline */
+    margin-top: 0;
+    vertical-align: middle;
+}
+
+.order-btn:hover {
+    background-color: #880e4f; /* Darker pink on hover */
+}
+/* ========================================================= */
+/* --- 1. GENERAL & DETAIL PAGE BASE STYLES --- */
+/* ========================================================= */
+
+.detail-page {
+    background-color: #fce4ec; /* Consistent light pink background */
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header/Nav for detail page - ensure it's not overlapping */
+.detail-page header {
+    background-color: #fff;
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: right;
+}
+
+.detail-page header nav a {
+    color: #e91e63;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.detail-page header nav a:hover {
+    color: #880e4f;
+}
+
+/* Footer for detail page */
+.detail-page footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* ========================================================= */
+/* --- 2. PRODUCT DETAILS SECTION (TEXT & LAYOUT) --- */
+/* ========================================================= */
+
+.product-details {
+    padding: 60px 5% 80px;
+    max-width: 1100px; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+.product-details h1 {
+    color: #880e4f; 
+    font-size: 3em; 
+    margin-bottom: 5px; /* Reduced margin to keep tagline close */
+    font-family: 'Playfair Display', serif; 
+    line-height: 1.2;
+}
+
+.product-tagline {
+    font-style: italic;
+    color: #b83256; 
+    font-size: 1.3em;
+    margin-bottom: 30px; 
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-description {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 50px; 
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* ========================================================= */
+/* --- 3. DETAIL GALLERY GRID (IMAGE ORGANIZATION) --- */
+/* ========================================================= */
+
+.detail-gallery-grid {
+    display: grid;
+    /* Two main columns for the large image, then smaller 1fr columns for details */
+    grid-template-columns: 1fr 1fr repeat(2, minmax(150px, 1fr)); 
+    grid-auto-rows: 200px; /* Fixed height for consistent small images */
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.main-image {
+    /* Main image spans the first 2 columns and 2 rows */
+    grid-column: 1 / 3; 
+    grid-row: 1 / 3;
+    height: 420px; /* Consistent height for the main image area */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crucial for same-sized images without stretching */
+    display: block;
+}
+
+.detail-gallery-grid img:not(.main-image img) { /* Styles for the 3 smaller detail images */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crucial for same-sized images without stretching */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.detail-gallery-grid img:not(.main-image img):hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(184,50,86,0.2);
+}
+
+/* ========================================================= */
+/* --- 4. ORDER BUTTON (LINK) --- */
+/* ========================================================= */
+/*
+.order-btn {
+    display: inline-block;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 18px 45px; 
+    border-radius: 30px;
+    font-size: 1.3em; 
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+}
+
+.order-btn:hover {
+    background-color: #880e4f;
+    transform: translateY(-3px);
+} */
+/* --- Add this block to your style.css if it's not already there --- */
+
+.main-image video { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the container without stretching */
+    display: block;
+    border-radius: 12px; /* Matches the container's rounded corners */
+}
+
+/* ========================================================= */
+/* --- 5. RESPONSIVENESS --- */
+/* ========================================================= */
+
+@media (max-width: 900px) {
+    .detail-gallery-grid {
+        /* On medium screens, main image is 3 columns, small images fill the rest */
+        grid-template-columns: repeat(3, 1fr); 
+        grid-auto-rows: 180px;
+    }
+    .main-image {
+        grid-column: 1 / 4; /* Span all three columns */
+        grid-row: 1 / 3; /* Still span 2 rows */
+        height: 380px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .product-details h1 {
+        font-size: 2em;
+    }
+    .product-tagline {
+        font-size: 1.1em;
+    }
+    .detail-gallery-grid {
+        grid-template-columns: 1fr; /* Stack all images on very small screens */
+        grid-auto-rows: auto;
+    }
+    .main-image {
+        grid-column: 1; 
+        grid-row: auto;
+        height: 300px;
+    }
+    .detail-gallery-grid img {
+        height: 250px; /* Consistent height for stacked images */
+    }
+}
+/* --- LIGHTBOX STYLES (for detail pages) --- */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Dark, transparent overlay */
+    z-index: 1000; /* Ensure it's on top of everything */
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#lightbox.active {
+    display: flex; /* Show when active */
+}
+
+#lightbox img {
+    /* Styling for the image inside the lightbox */
+    max-width: 90%;
+    max-height: 90vh;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* Behind */
+.behind {
+  text-align: center;
+  padding: 100px 10%;
+}
+
+.behind video {
+  width: 20%;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  padding: 100px 10%;
+}
+/*
+.order-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #b83256;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background-color: #f74b74;
+} */
+/* Connect */
+.connect {
+  text-align: center;
+  padding: 80px 8%;
+  background-color: #fff;
+}
+
+.connect h2 {
+  color: #e91e63;
+  font-family: 'Playfair Display', serif;
+}
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.social-links a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-links img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.15);
+}
+
+
+/* Footer */
+footer {
+  background-color: #ffb6c1b8;
+  padding: 20px;
+  text-align: center;
+}
+
+.socials a {
+  color: #b83256;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
+
+/* Order Page */
+.order-page {
+  padding: 150px 10%;
+  text-align: center;
+}
+
+.order-page form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 30px auto;
+  gap: 15px;
+}
+
+.order-page input,
+.order-page textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #f4a1b5;
+}
+
+.order-page button {
+  background-color: #b83256;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.order-page button:hover {
+  background-color: #f74b74;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 20px;
+  color: #b83256;
+  text-decoration: none;
+}
+
+.back-home:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}

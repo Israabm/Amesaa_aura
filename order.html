@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place an Order | Amessa Aura</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="order-page fade-in">
+    <h2>Ready to bring Amessa Aura into your home?</h2>
+    <p>Fill in your details below and share your order ideas — you’ll receive a reply within 24 hours 💌</p>
+
+    <form id="orderForm">
+      <input type="text" name="from_name" placeholder="Your Name" required />
+      <input type="email" name="reply_to" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Order</button>
+    </form>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
