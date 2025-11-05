@@ -629,50 +629,79 @@ footer {
   transform: translateY(0);
 }
 /* 🌸 Responsive adjustments for mobile */
+/* 🌸 Mobile adjustments */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 15px;
+    gap: 10px;
+    padding: 10px 0;
   }
 
   header .logo {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    padding: 0;
   }
 
   nav a {
     font-size: 1rem;
+    padding: 5px;
   }
 
+  /* Hero section fixes */
   .hero {
-    height: 70vh;
-    background-position: center;
+    height: 85vh;
+    padding: 60px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background-size: cover;
-    padding: 40px 5%;
+    background-position: center;
   }
 
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin-bottom: 15px;
   }
 
   .hero p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    max-width: 90%;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
+  /* About section layout */
+  .about-content {
+    flex-direction: column;
+    text-align: center;
     gap: 20px;
   }
 
-  .contact form {
-    width: 100%;
-    padding: 0 10px;
+  .about-content img {
+    width: 90%;
+    height: auto;
+  }
+
+  /* General typography fixes */
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Gallery grid stack */
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
+
 
